@@ -38,3 +38,4 @@
 # Custom Added
 .DS_Store
 build/
+node_modules/

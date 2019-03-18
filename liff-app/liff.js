@@ -1,5 +1,5 @@
 // User service UUID: Change this to your generated service UUID
-const USER_SERVICE_UUID         = '91E4E176-D0B9-464D-9FE4-52EE3E9F1552'; // LED, Button
+const USER_SERVICE_UUID         = '24301225-cb6e-4b8d-8d39-5aec95acb104'; // LED, Button
 // User service characteristics
 const LED_CHARACTERISTIC_UUID   = 'E9062E71-9E62-4BC6-B0D3-35CDCD9B027B';
 const BTN_CHARACTERISTIC_UUID   = '62FBD229-6EDD-4D1A-B554-5C4E1BB29169';
@@ -15,9 +15,13 @@ let clickCount = 0;
 // -------------- //
 // On window load //
 // -------------- //
-
+window.onbeforeunload = function() {
+    return "Did you save your stuff?"
+}
 window.onload = () => {
     initializeApp();
+    window.displayName = ''
+    window.pictureUrl = ''
 };
 
 // ----------------- //
@@ -29,6 +33,14 @@ function handlerToggleLed() {
 
     uiToggleLedButton(ledState);
     liffToggleDeviceLedState(ledState);
+    axios.post('https://demo-line-things.herokuapp.com/unlock', {
+          userName: window.displayName,
+          userPic: window.pictureUrl
+        }).then(function (response) {
+          console.log(response);
+        }).catch(function (error) {
+          console.log(error);
+        });
 }
 
 // ------------ //
@@ -37,7 +49,7 @@ function handlerToggleLed() {
 
 function uiToggleLedButton(state) {
     const el = document.getElementById("btn-led-toggle");
-    el.innerText = state ? "Switch LED OFF" : "Switch LED ON";
+    el.innerText = state ? "開鎖" : "鎖門";
 
     if (state) {
       el.classList.add("led-on");
@@ -137,6 +149,15 @@ function initializeLiff() {
         liffCheckAvailablityAndDo(() => liffRequestDevice());
     }).catch(error => {
         uiStatusError(makeErrorMsg(error), false);
+    });
+    liff.getProfile().then(profile => {
+        window.displayName = profile.displayName
+        window.pictureUrl = profile.pictureUrl
+        document.getElementById("userPic").src = window.pictureUrl;
+        document.getElementById("userPic").hidden = false;
+        document.getElementById("userName").innerHTML = window.displayName;
+    }).catch((err) => {
+        console.log('error', err);
     });
 }
 
