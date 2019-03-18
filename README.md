@@ -1,19 +1,14 @@
 # LINE Things Starter
 
-These are the sample codes for LINE Things Developer Trial.
-
-LINE Things compatible device example firmware and LIFF application code are included.
+這份Code改寫自LINE Corporation的sample code => https://github.com/line/line-things-starter
 
 ## Getting Started
 
-[LINE Things](https://developers.line.biz/ja/docs/line-things/) is a platform that connects Bots and Web services together with IoT devices that are Bluetooth LE enabled. 
-
-To start developing for LINE Things using the example code and the sample firmware, the following steps are necessary.
+請準備好ESP32, 並將esp32資料夾內的範例程式碼上傳即可
 
 ### Installing the Firmware
 
-To start development using the example firmwares, you will need a compatible Bluetooth LE enabled development board.
-Currently LINE Things Starter firmwares supports the following 3 development boards
+以下是官方建議的開發板
 
 - [Espressif ESP32-DevKitC](https://www.espressif.com/en/products/hardware/esp32-devkitc/overview)
 - [M5Stack （ESP32)](http://m5stack.com/)
@@ -26,13 +21,13 @@ For further details, please refer to the `README` file in each directory.
 
 ### Enable LINE Things
 
-Please scan the following QR code with LINE to activate LINE Things.
+請掃描以下的QR code, 啟動LINE Things tab, 啟動之後可以在Settings裡看到LINE Things
 
 ![](https://developers.line.biz/media/line-things/qr_code-311f3503.png)
 
-Upon turning the device on, a device with the name `LINE Things Starter (Default Firmware)`  will be detected.
-Once the device is connected, the LIFF app can then be launched by selecting the device.
-Here you can test all the LIFF BLE functionalities of LINE Things.
+
+要看到這份範例Code的裝置, 請先加入這個OA
+![](https://i.imgur.com/uxlcDnQ.png)
 
 ## Developer Trial
 
