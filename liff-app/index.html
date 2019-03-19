@@ -3,13 +3,18 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <script src=" https://d.line-scdn.net/liff/1.0/sdk.js"></script>
+    <script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="dist/liff.js"></script>
+    <script src="liff.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vConsole/3.3.0/vconsole.min.js"></script>
     <link rel="stylesheet" type="text/css" href="liff.css" />
   </head>
 
   <body>
+      <script>
+          // init vConsole
+          var vConsole = new VConsole();
+        </script>
     <!-- Title -->
     <h2>智慧安全小管家</h2>
     <hr />
@@ -53,7 +58,7 @@
       <hr />
       <!-- Toggle LED -->
       <p>
-        <button id="btn-led-toggle" class="btn btn-led-toggle" onclick="handlerToggleLed()">開鎖囉！</button>
+        <button id="btn-led-toggle" class="btn btn-led-toggle">開鎖囉！</button>
       </p>
       <hr />
 

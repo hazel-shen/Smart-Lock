@@ -15,6 +15,7 @@ let clickCount = 0;
 // -------------- //
 // On window load //
 // -------------- //
+// document.getElementById("btn-led-toggle").addEventListener("click",handlerToggleLed);
 
 window.onload = () => {
     initializeApp();
@@ -83,6 +84,8 @@ function uiToggleDeviceConnected(connected) {
     if (connected) {
         // Hide loading animation
         uiToggleLoadingAnimation(false);
+        const btn_led = document.getElementById("btn-led-toggle")
+        btn_led.addEventListener("click", handlerToggleLed )
         // Show status connected
         elStatus.classList.remove("inactive");
         elStatus.classList.add("success");
