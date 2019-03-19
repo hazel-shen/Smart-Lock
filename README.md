@@ -4,8 +4,12 @@
 
 ## Getting Started
 
-請準備好ESP32, 並將esp32資料夾內的範例程式碼上傳即可
-請把裡面的heroku連結以及line notify access token置換成自己的
+1. 關於ESP32
+  請準備好ESP32, 並將esp32資料夾內的範例程式碼上傳即可
+  請把裡面的heroku連結以及line notify access token置換成自己的
+
+2. 關於LIFF APP
+  請加入
 
 ### Installing the Firmware
 
