@@ -1,5 +1,5 @@
 // User service UUID: Change this to your generated service UUID
-const USER_SERVICE_UUID         = '24301225-cb6e-4b8d-8d39-5aec95acb104'; // LED, Button
+const USER_SERVICE_UUID         = process.env.USER_SERVICE_UUID; // LED, Button
 // User service characteristics
 const LED_CHARACTERISTIC_UUID   = 'E9062E71-9E62-4BC6-B0D3-35CDCD9B027B';
 const BTN_CHARACTERISTIC_UUID   = '62FBD229-6EDD-4D1A-B554-5C4E1BB29169';
@@ -15,9 +15,7 @@ let clickCount = 0;
 // -------------- //
 // On window load //
 // -------------- //
-window.onbeforeunload = function() {
-    return "Did you save your stuff?"
-}
+
 window.onload = () => {
     initializeApp();
     window.displayName = ''
@@ -27,13 +25,12 @@ window.onload = () => {
 // ----------------- //
 // Handler functions //
 // ----------------- //
-
 function handlerToggleLed() {
     ledState = !ledState;
 
     uiToggleLedButton(ledState);
     liffToggleDeviceLedState(ledState);
-    axios.post('https://demo-line-things.herokuapp.com/unlock', {
+    axios.post(process.env.UNLOCK_API, {
           userName: window.displayName,
           userPic: window.pictureUrl
         }).then(function (response) {

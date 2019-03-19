@@ -1,5 +1,5 @@
 "use strict"
-
+require('dotenv').config();
 const express = require('express')
 const path = require('path')
 const axios = require('axios')
@@ -9,8 +9,6 @@ const app = express()
 const staticFileMiddleware = express.static(path.join(__dirname))
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json())
-console.log(path.join(__dirname + '/index.html'))
-
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*") // Should be fixed before Risk assessment
   res.header(
@@ -24,7 +22,6 @@ app.use(staticFileMiddleware)
 app.get('/', (req, res) => {
   res.sendStatus(200).render(path.join(__dirname + '/index.html'))
 })
-
 app.post('/unlock', (req, res) => {
   console.log(req.body)
   let userName = req.body.userName
@@ -32,7 +29,7 @@ app.post('/unlock', (req, res) => {
   axios.post('https://notify-api.line.me/api/notify', 'message=' +  userName + ' 正在開門', {
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded', 
-      'Authorization': 'Bearer b7xxo0uRLVGMTg81mfU7ro4jkpN8kPuDpmbSKpxwYVm'
+      'Authorization': config.ACCESS_TOKEN
       //Please replace this access token to yours
     }
   })
