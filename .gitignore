@@ -34,7 +34,8 @@
 *.exe
 *.out
 *.app
-
+.env
+.cache/
 # Custom Added
 .DS_Store
 build/

@@ -9,7 +9,8 @@
   請把裡面的heroku連結以及line notify access token置換成自己的
 
 2. 關於LIFF APP
-  請加入
+  請把liff-app/.example.env複製一份為liff-app/.env, 並將{{}}裡面的數值改成自己的設定
+
 
 ### Installing the Firmware
 
