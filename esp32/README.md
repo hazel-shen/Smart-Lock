@@ -25,7 +25,7 @@ Please ensure you have Arduino IDE installed and the board **disconnected**.
 4. Test uploading to the board by uploading an empty sketch to make sure there are no issues.
 5. The sample project requires a relay and a smart lock to be connected to the development board. Please refer the following picture:
 
-![Refer to the picture](https://i.imgur.com/lXzFPbWg.png)
+![Refer to the picture](https://i.imgur.com/JL28goeg.png)
 
 ## Upload
 1. From this repository, open **arduino/sample/sample.ino**
