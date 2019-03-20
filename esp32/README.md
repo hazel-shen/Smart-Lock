@@ -3,9 +3,10 @@
 ## Requirements
 * [Arduino IDE](https://www.arduino.cc/en/Main/Software)
 * [ESP32-DevKitC](https://www.espressif.com/en/products/hardware/esp32-devkitc/overview)
-* LED
-* 220Ω Resistor
+* Several Dupont lines.
+* Magnetic lock x 1
 * Micro-USB to USB Cable
+* Relay x 1
 
 ## Installation
 Please ensure you have Arduino IDE installed and the board **disconnected**.
@@ -22,9 +23,9 @@ Please ensure you have Arduino IDE installed and the board **disconnected**.
 2. Go into Tools -> Board and select **ESP32 Dev Module** from the list
 3. Under Tools -> Port select the appropriate device *ie. COM1, /dev/cu.SLAB_USBtoUART*
 4. Test uploading to the board by uploading an empty sketch to make sure there are no issues.
-5. The sample project requires a LED to be connected to the development board. Attach one side of the resistor to **IO2** and the other to the anode side of the LED (positive side or the longer lead). Then connect the cathode side of the LED (negative side or the shorter lead) to **Ground**.
+5. The sample project requires a relay and a smart lock to be connected to the development board. Please refer the following picture:
 
-![Refer to the picture](./LED_Connection.png)
+![Refer to the picture](https://i.imgur.com/lXzFPbWg.png)
 
 ## Upload
 1. From this repository, open **arduino/sample/sample.ino**
